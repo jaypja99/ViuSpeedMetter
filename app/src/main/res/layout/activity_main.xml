@@ -33,7 +33,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.80199665" />
 
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline8"
         android:layout_width="wrap_content"
@@ -43,37 +42,98 @@
 
 
     <View
-        android:id="@+id/left_gauge"
+        android:id="@+id/right_gauge"
         android:layout_width="0dp"
         android:layout_height="66dp"
-        android:layout_marginStart="-100dp"
-        android:background="@drawable/ic_bluefade_3cell"
-        app:layout_constraintEnd_toEndOf="@+id/appCompatImageView3"
-        app:layout_constraintStart_toStartOf="@+id/appCompatImageView3"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
-
-    <View
-        android:id="@+id/right_gauge"
-        android:layout_width="200dp"
-        android:layout_height="66dp"
-        android:background="@drawable/ic_bluefade_3cell"
-        app:layout_constraintEnd_toStartOf="@+id/guideline8"
-        app:layout_constraintStart_toStartOf="@+id/guideline8"
+        android:background="@drawable/ic_black_fade"
+        app:layout_constraintEnd_toEndOf="@+id/imgRightFill"
+        app:layout_constraintStart_toStartOf="@+id/imgRightFill"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/appCompatImageView3"
+        android:id="@+id/imgRightTecho"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_margin="0dp"
+        android:adjustViewBounds="true"
+        android:rotation="180"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintStart_toEndOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout"
+        app:srcCompat="@drawable/ic_left_teco_line"
+        tools:background="@color/black" />
+
+    <View
+        android:id="@+id/right_blue_gauge"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@drawable/ic_bluefade_3cell"
+        app:layout_constraintEnd_toEndOf="@+id/imgRightFill"
+        app:layout_constraintStart_toStartOf="@+id/imgRightFill"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgRightFill"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_margin="0dp"
+        android:adjustViewBounds="true"
+        android:rotation="180"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintStart_toEndOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout"
+        app:srcCompat="@drawable/left"
+        tools:background="@color/black" />
+
+    <View
+        android:id="@+id/left_teco_black"
+        android:layout_width="0dp"
+        android:layout_height="66dp"
+        android:background="@drawable/ic_black_fade"
+        app:layout_constraintEnd_toEndOf="@+id/imgLeftFill"
+        app:layout_constraintStart_toStartOf="@+id/imgLeftFill"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgLeftTecho"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_margin="0dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout"
+        app:srcCompat="@drawable/ic_left_teco_line"
+        tools:background="@color/black" />
+
+    <View
+        android:id="@+id/left_gauge"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@drawable/ic_bluefade_3cell"
+        app:layout_constraintEnd_toEndOf="@+id/imgLeftFill"
+        app:layout_constraintStart_toStartOf="@+id/imgLeftFill"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgLeftFill"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_margin="0dp"
+        android:adjustViewBounds="true"
         app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="@+id/constraintLayout"
         app:srcCompat="@drawable/left"
-        android:adjustViewBounds="true"
         tools:background="@color/black" />
 
-
+    <View
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/imgRightFill"
+        app:layout_constraintStart_toStartOf="@+id/imgLeftFill"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="0dp"
@@ -93,14 +153,16 @@
             app:srcCompat="@drawable/ic_white_bg" />
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgDots"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="20dp"
-            app:srcCompat="@drawable/ic_top_anim"
+            android:padding="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_top_anim" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/appCompatImageView"
@@ -115,6 +177,27 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="50dp"
+        android:rotation="180"
+        app:layout_constraintBottom_toBottomOf="@+id/imgLeftTecho"
+        app:layout_constraintEnd_toEndOf="@+id/imgLeftTecho"
+        app:layout_constraintStart_toStartOf="@+id/imgLeftTecho"
+        app:layout_constraintTop_toTopOf="@+id/imgLeftTecho"
+        app:srcCompat="@drawable/ic_r_side" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgRightTecho"
+        app:layout_constraintEnd_toEndOf="@+id/imgRightTecho"
+        app:layout_constraintStart_toStartOf="@+id/imgRightTecho"
+        app:layout_constraintTop_toTopOf="@+id/imgRightTecho"
+        app:srcCompat="@drawable/ic_r_side" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
@@ -122,5 +205,11 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.24" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.42" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
